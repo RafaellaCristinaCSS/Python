@@ -10,6 +10,6 @@ print(type(Student))
 print(type(studentGrade))
 print(type(studentRegistered))
 
-""" Recebendo dados do usuario | Receiving user data """
+""" Recebendo e imprimindo dados do usuario | Receiving and Printing user data """
 Student = input("Digite um nome: ")
-print(Student)
+print(f"Hello {Student}, welcome") 
