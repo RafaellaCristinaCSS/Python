@@ -11,7 +11,7 @@ print(type(studentGrade))
 print(type(studentRegistered))
 
 """ Receiving and Printing user data | Recebendo e imprimindo dados do usuario """
-# Student = input("Digite um nome: ")
+# Student = input("Enter your name: ")
 # print(f"Hello {Student}, welcome") 
 
 """ Math Operations | Operações Matematicas"""
@@ -31,4 +31,17 @@ if a < b:
 elif a == b:
     print("a is equal to b") 
 else: 
-    print("a is greater than b")      
+    print("a is greater than b")     
+
+""" Repeating structure | Estrutura de Repetição """
+number = 1
+while number != 0:
+    number = int(input("Enter your number: "))
+    if number % 2 == 0:
+        print("this number is even!")
+    else:
+        print("this number is odd") 
+
+name = "word"
+for i, letter in enumerate(name):
+    print(f"key = {i}, name = {letter}")
