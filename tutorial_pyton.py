@@ -12,7 +12,7 @@ print(type(studentRegistered))
 
 """ Receiving and Printing user data | Recebendo e imprimindo dados do usuario """
 # Student = input("Digite um nome: ")
-print(f"Hello {Student}, welcome") 
+# print(f"Hello {Student}, welcome") 
 
 """ Math Operations | Operações Matematicas"""
 x = 10
@@ -23,3 +23,10 @@ print("x%y == 1")
 print("abs(x) == 10")
 print("pow(x,y) == 1000 or x**y == 1000 equals x^y")
 
+""" Conditional structures | Estruturas condicionais """
+a = 5
+b = 10
+if a < b:
+    print("a is less than b")
+else: 
+    print("a is greater than b")      
