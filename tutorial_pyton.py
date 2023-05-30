@@ -42,6 +42,10 @@ while number != 0:
     else:
         print("this number is odd")
 
+name = 'Rafa'
+for i in name:
+    print(i)
+
 name = "word"
 for i, letter in enumerate(name):
     print(f"key = {i}, name = {letter}")
@@ -124,3 +128,4 @@ def calculate_value(product_value, amount, coin="real", **kwargs):
 
 amount_to_pay = calculate_value(product_value=32, amount=5, discount=5)
 print(f"O valor final da conta é {amount_to_pay}")    
+
