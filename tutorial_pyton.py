@@ -45,3 +45,19 @@ while number != 0:
 name = "word"
 for i, letter in enumerate(name):
     print(f"key = {i}, name = {letter}")
+
+""" Replay Control | Controle de Repetição """
+# Range
+for x in range(5):
+    print(x)
+
+# For + Break and continue
+
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+for i, c in enumerate(text):
+    if c == ' ':
+        continue
+    if c == '.':
+       break    
+    else:
+        print(c, end="") # 2 letters on 1 row 
