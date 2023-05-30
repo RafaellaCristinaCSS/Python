@@ -97,3 +97,30 @@ print_parameters(10, "Subjects")
 
 sum = lambda x, y: x + y
 print(sum(x=5, y=3))
+
+""" Challenge | Desafio """
+
+def calculate_value(product_value, amount, coin="real", **kwargs):
+    gross_value = product_value * amount
+    
+    if 'discount' in kwargs:
+        discount = kwargs['discount']
+        net_value = gross_value - (gross_value * (discount / 100))
+    elif 'addition' in kwargs:
+        addition = kwargs['addition']
+        net_value = gross_value + (gross_value * (addition / 100))
+    else:
+        net_value = gross_value
+    
+    if coin == 'real':
+        return net_value
+    elif coin == 'dolar':
+        return net_value * 5
+    elif coin == 'euro':
+        return net_value * 5.7
+    else:
+        print("This currency has not been registered")
+        return 0
+
+amount_to_pay = calculate_value(product_value=32, amount=5, discount=5)
+print(f"O valor final da conta é {amount_to_pay}")    
