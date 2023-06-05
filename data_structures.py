@@ -29,6 +29,7 @@ print(f"New list = {new_list}\n")
 new_list = list(new_list)
 print(f"Now yes, the new list is = {new_list}")
 
+""" filtering data """
 def extract_email_list(list_1, list_2):
     list_1 = list(zip(list_1['name'], list_1['email'], list_1['sent']))
     print(f"List sample 1 = {list_1[0]}")
@@ -40,7 +41,6 @@ def extract_email_list(list_1, list_2):
     print(f"\n Data sample = \n{data[:2]}\n\n")
     
     emails = [x[1] for x in data if not x[2]]
-    
     return emails
 
 
@@ -56,6 +56,18 @@ data_2 = {
     'sent': [False, False, False, True, True, True, False, True, True, False]
 }
 
-
 emails = extract_email_list(list_1=data_1, list_2=data_2)
 print(f"E-mails to be sent = \n {emails}")
+
+""" ordenation """
+print('\nOrdenation:\n')
+
+list = [10, 4, 1, 15, -3]
+print('list = ', list, '\n')
+""" to sort a list: """
+first_ordered_list = sorted(list)
+print('First ordered list = ', first_ordered_list)
+
+""" or: """
+list.sort()
+print('lista = ', list, '\n')
