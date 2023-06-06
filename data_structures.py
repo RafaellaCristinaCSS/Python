@@ -93,3 +93,20 @@ def execute_selection_sort(list):
 list = [10, 9, 5, 8, 11, -1, 3]
 print(execute_selection_sort(list))
 
+""" BUBBLE SORT """
+""" First: selects the value at position 0 and compares it with its neighbor – if it is smaller,
+    there is an exchange; if not, select the next one and compare, repeating the process. """
+""" Second: selects the value at position 0 and compares it with its neighbor, 
+    if it is a smaller change, otherwise selects the next one and compares it, repeating the process.  """
+""" This process is repeated N-1 times, where N is the length of the list. """
+
+def execute_bubble_sort(list):
+    n = len(list)
+    for i in range(n-1):
+        for j in range(n-1):
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+    return list
+
+list = [10, 9, 5, 8, 11, -1, 3]
+execute_bubble_sort(list)
