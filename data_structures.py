@@ -118,3 +118,20 @@ execute_bubble_sort(list)
 """ Second: it is assumed that a new value needs to be inserted into the list; in this case, 
     it is compared with the existing values to see if position changes need to be made. """
 """ This process is repeated N-1 times, where N is the length of the list """
+
+def execute_insertion_sort(list):
+    n = len(list)
+    for i in range(1, n):
+        entered_value = list[i] 
+        j = i - 1
+        
+        while j >= 0 and list[j] > entered_value:
+            list[j + 1] = list[j]
+            j -= 1
+        list[j + 1] = entered_value
+    
+    return list
+
+
+list = [10, 9, 5, 8, 11, -1, 3]
+execute_insertion_sort(list)
