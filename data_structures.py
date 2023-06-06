@@ -70,7 +70,7 @@ print('First ordered list = ', first_ordered_list)
 
 """ or: """
 list.sort()
-print('lista = ', list, '\n')
+print('list = ', list, '\n')
 
 """ SELECTION SORT """
 """ How is works selection sort """
@@ -134,3 +134,42 @@ def execute_insertion_sort(list):
 
 list = [10, 9, 5, 8, 11, -1, 3]
 execute_insertion_sort(list)
+
+""" MERGE SORT """
+""" First: Based on the original list, find the middle and separate it into two lists: left_1 and right_2. """
+""" Second: Based on the left_1 sublist, if the amount of elements is greater than 1, 
+    find the middle and separate it into two lists: left_1_1 and right_1_1. """
+""" Thired: Repeat the process until you find a list with size 1. """ 
+""" Fourth: Call the merge step.  """
+""" Fifth: Given two lists, each of which contains 1 value – to sort, 
+    simply compare these values and swap, generating a sublist with two sorted values. """
+""" Sixth: Given two lists, each of which contains 2 values – to order, 
+    just choose the smallest value in each one and generate a sublist with four ordered values. """
+""" Repeat the process of comparing and merging the values until you reach the original list, now sorted. """
+
+def execute_merge_sort(list):
+    if len(list) <= 1: return list
+    else:
+        middle = len(list) // 2
+        left = execute_merge_sort(list[:middle])
+        right = execute_merge_sort(list[middle:])
+        return execute_merge(left, right)
+
+    
+def execute_merge(left, right):
+    sub_list_ordination = []
+    top_left, top_right = 0, 0
+    while top_left < len(left) and top_right < len(right):
+        if left[top_left] <= right[top_right]:
+            sub_list_ordination.append(left[top_left])
+            top_left += 1
+        else:
+            sub_list_ordination.append(right[top_right])
+            top_right += 1
+    sub_list_ordination += left[top_left:]
+    sub_list_ordination += right[top_right:]
+    return sub_list_ordination
+
+
+list = [10, 9, 5, 8, 11, -1, 3]
+execute_merge_sort(list)
