@@ -110,3 +110,11 @@ def execute_bubble_sort(list):
 
 list = [10, 9, 5, 8, 11, -1, 3]
 execute_bubble_sort(list)
+
+""" Insertion sort  """
+""" Start: it is assumed that the list has a single value and is therefore sorted """
+""" First: it is assumed that a new value needs to be inserted into the list; in this case, 
+    it is compared with the existing value to see if a position change needs to be made. """
+""" Second: it is assumed that a new value needs to be inserted into the list; in this case, 
+    it is compared with the existing values to see if position changes need to be made. """
+""" This process is repeated N-1 times, where N is the length of the list """
