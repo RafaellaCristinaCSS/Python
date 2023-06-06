@@ -71,3 +71,25 @@ print('First ordered list = ', first_ordered_list)
 """ or: """
 list.sort()
 print('lista = ', list, '\n')
+
+""" SELECTION SORT """
+""" How is works selection sort """
+""" First: go through the entire list, looking for the smallest value to occupy position 0 """
+""" Second: starting from position 1, it goes through the entire list, looking for the smallest value to occupy position 1. """
+""" Third: starting from position 2, it goes through the entire list, looking for the smallest value to occupy position 2."""
+""" This process is repeated N-1 times, where N is the length of the list. """
+
+def execute_selection_sort(list):
+    n = len(list)
+    
+    for i in range(0, n):
+        index_min = i
+        for j in range(i+1, n):
+            if list[j] < list[index_min]:
+                index_min = j
+        list[i], list[index_min] = list[index_min], list[i]
+    return list
+
+list = [10, 9, 5, 8, 11, -1, 3]
+print(execute_selection_sort(list))
+
