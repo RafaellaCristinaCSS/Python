@@ -132,6 +132,5 @@ def execute_insertion_sort(list):
     
     return list
 
-
 list = [10, 9, 5, 8, 11, -1, 3]
 execute_insertion_sort(list)
