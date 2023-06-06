@@ -139,7 +139,7 @@ execute_insertion_sort(list)
 """ First: Based on the original list, find the middle and separate it into two lists: left_1 and right_2. """
 """ Second: Based on the left_1 sublist, if the amount of elements is greater than 1, 
     find the middle and separate it into two lists: left_1_1 and right_1_1. """
-""" Thired: Repeat the process until you find a list with size 1. """ 
+""" Third: Repeat the process until you find a list with size 1. """ 
 """ Fourth: Call the merge step.  """
 """ Fifth: Given two lists, each of which contains 1 value – to sort, 
     simply compare these values and swap, generating a sublist with two sorted values. """
@@ -173,3 +173,34 @@ def execute_merge(left, right):
 
 list = [10, 9, 5, 8, 11, -1, 3]
 execute_merge_sort(list)
+
+""" QUICKSORT """
+""" First: the original list will be broken through a value called a pivot. 
+    After the break, the values that are smaller than the pivot should be on its left and the larger ones on its right.
+    The pivot is inserted at the proper location, swapping the position with the current value. """
+""" Second: now there are two lists, the one to the right and the one to the left of the pivot. Again, 
+    two new pivots are chosen and the same process is carried out, placing the smaller ones on the right and the larger ones on the left.
+    In the end, the new pivots occupy their correct positions.  """
+""" Third: looking at the two new sublists (right and left), the process of choosing pivots and separating is repeated. """
+""" In the last iteration, the list will be ordered, as a result of the previous steps. """
+
+def execute_quicksort(list, start, end):
+    if start < end:
+        pivo = execute_participation(list, start, end)
+        execute_quicksort(list, start, pivo-1)
+        execute_quicksort(list, pivo+1, end)
+    return list
+
+        
+def execute_participation(list, start, end):
+    pivo = list[end]
+    left = start
+    for right in range(start, end):
+        if list[right] <= pivo:
+            list[right], list[left] = list[left], list[right]
+            left += 1
+    list[left], list[end] = list[end], list[left]
+    return left
+
+list = [10, 9, 5, 8, 11, -1, 3]
+execute_quicksort(list, start=0, end=len(list)-1)
